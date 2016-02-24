@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>instantwall</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <script src="scripts/instantsearch.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <header class="hero-header">
+      <h1>instant<span>search</span><em>-bricks</em></h1>
+      <h2>a mansonry plugin for instant<em>search</em><span>.js</span>, using <i><a href="http://callmecavs.com/bricks.js/" target="_blank">Bricks<span>.js</span></a></i></h2>
+    </header>   
+    <section>
+      <p>Building a wall, the rigth way.</p>
+    </section>  
+    <section>
+      <div id="search-box"></div>
+
+    </section>
+    <section>
+      <div id="hits-container" data-grid>
+        
+      </div>
+    </section>
+
+  </div>
+  <script src="scripts/bricks.min.js"></script>
+  <script src="scripts/main.js"></script>
+
+  <script>
+  instantWall({
+    appId: 'XVHMMPDAN4',
+    apiKey: '20c1156386b029472574bab3f637c80e',
+    indexName: 'instantwall_demo',
+    urlSync: true,
+    searchBox: {
+      container: '#search-box',
+      placeholder: 'Search for products...'
+    },
+    hits: {
+      container: '#hits-container',
+      templates: {
+        empty: 'No results',
+        item: '<div data-card="{{category}}" style="background: {{color}}"></div>'
+      },
+      hitsPerPage: 100
+    },
+
+    bricks: {
+      container: '[data-grid]',
+      packed: 'data-packed',
+      sizes: {
+        base: {
+          columns: 6,
+          gutter: 10
+        },
+        mq1: {
+          mq: '640px',
+          columns: 2,
+          gutter: 25
+        },
+        mq2: {
+          mq: '768px',
+          columns: 4,
+          gutter: 25
+        },
+        mq3: {
+          mq: '1024px',
+          columns: 6,
+          gutter: 16        
+        }
+      }
+    }
+})
+
+
+</script>
+</body>
+</html>
